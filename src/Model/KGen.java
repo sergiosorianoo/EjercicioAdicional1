@@ -20,10 +20,15 @@ public class KGen {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(rutaFichero))) {
             String line;
-            while ((line = br.readLine()) != null) {
+            line = br.readLine();
+            while (line != null) {
                 if (!line.startsWith(">")) {
                     sb.append(line.trim());
                 }
+
+                //falta aquí algo
+                line = br.readLine();
+
             }
         } catch (IOException e) {
             e.printStackTrace();
